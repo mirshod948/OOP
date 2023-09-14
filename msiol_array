@@ -1,0 +1,42 @@
+<?php
+function massivYigindisi($n) {
+    $yigindi = 1;
+    $arr = [];
+    $mass = count($n);
+  
+    for ($i = 1; $i <= $mass; $i++) {
+        $yigindi *= $mass;
+        $arr = $yigindi;
+    }
+
+    return $arr;
+}
+
+// Test qismi
+$n = [2,3,5,6]; // Massiv elementlarining soni
+$yigindi = massivYigindisi($n);
+var_dump($yigindi);
+?>
+
+// Toq elementlar yig'indisi
+
+<?php
+function toqIndeksYigindisi($n) {
+    $yigindi = 0;
+    $arr = [];
+    for ($i = 1; $i <= count($n); $i++) {
+        if ($i % 2 != 0) { // Faqat toq indeksdagi elementlarni qo'shish
+            $yigindi += $i;
+            $arr = $yigindi;
+        }
+    }
+
+    return $arr;
+}
+
+// Test qismi
+$n = [12,45,8,7]; // Massivning elementlarining soni
+$yigindi = toqIndeksYigindisi($n);
+echo "Massivning toq indeksdagi elementlari yig'indisi: " . $yigindi;
+?>
+
